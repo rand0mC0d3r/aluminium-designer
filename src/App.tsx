@@ -1,6 +1,8 @@
-import { Paper } from '@mui/material';
+/* eslint-disable @typescript-eslint/no-unused-vars */
+// import { Paper } from '@mui/material';
 import { IndustrialProvider, PlacementPosition, Status } from 'mui-industrial';
-import { useState } from 'react';
+// import { useState } from 'react';
+import { Entity, Scene } from 'aframe-react';
 import ReactFlow, { Background, Controls, MiniMap, Panel } from 'reactflow';
 import 'reactflow/dist/style.css';
 import './App.css';
@@ -9,7 +11,7 @@ import { SPaper } from './components/CustomPaper/css';
 import NodeSceneMain from './components/NodeSceneMain';
 
 function App() {
-  const [selectedParts, setSelectedParts] = useState<string[]>([]);
+  // const [selectedParts, setSelectedParts] = useState<string[]>([]);
 
 
   const nodeTypes = {
@@ -24,7 +26,7 @@ function App() {
 
   return (
     <IndustrialProvider position={PlacementPosition.BOTTOM} style={{ width: "100%", height: "30px" }}>
-    <div style={{ width: '100%', position: 'absolute', height: '100%' }}>
+    <div style={{ width: '100%', position: 'absolute', height: '100%', color: 'black' }}>
       <ReactFlow nodeTypes={nodeTypes} nodes={initialNodes} edges={initialEdges} fitView>
 
       <Panel position="top-left">
@@ -32,16 +34,12 @@ function App() {
           <CustomImportList />
         </SPaper>
       </Panel>
-        <Panel position="top-center">top-center</Panel>
-        <Panel position="top-right">top-right</Panel>
-        <Panel position="bottom-left">bottom-left</Panel>
-        <Panel position="bottom-center">bottom-center</Panel>
-        <Panel position="bottom-right">bottom-right</Panel>
 
         <Background color="#aaa" gap={16} />
         <MiniMap />
         <Controls />
       </ReactFlow>
+
     </div>
     <Status id='sampleStatus'>
       <Status.Template text='Sample Status' />

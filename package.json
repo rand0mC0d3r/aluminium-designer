@@ -14,12 +14,15 @@
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.14.7",
     "@mui/material": "^5.14.7",
+    "aframe": "^1.4.2",
+    "aframe-react": "^4.4.0",
     "mui-industrial": "^0.0.67",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "reactflow": "^11.8.3"
   },
   "devDependencies": {
+    "@types/aframe": "^1.2.2",
     "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
     "@typescript-eslint/eslint-plugin": "^6.5.0",
