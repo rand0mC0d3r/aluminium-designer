@@ -4,7 +4,7 @@ export interface CustomImportItemProps {
   id: string;
   label: string;
   description?: string;
-  code?: string;
+  code?: any[];
   icon?: string;
   tags?: string[];
 }
