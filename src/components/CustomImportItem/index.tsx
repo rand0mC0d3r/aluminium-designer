@@ -19,10 +19,12 @@ export const CustomImportItem = ({object} : {object: CustomImportItemProps}) => 
         </Box>
         <Box display={'flex'} sx={{gap: '8px'}} alignItems={'flex-start'}>
           {/* <img src="https://via.placeholder.com/150" alt="placeholder" /> */}
+
           <div style={{ width: '350px', height: '350px', position: 'relative', overflow: 'hidden', display: 'contents'}}>
-            <a-scene key={object.id} id={object.id}>
+            <iframe src="https://aframe.io/aframe/examples/boilerplate/hello-world/" />
+            {/* <a-scene key={object.id} id={object.id}>
               <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-            </a-scene>
+            </a-scene> */}
         </div>
           <Typography variant="caption" color="textSecondary"> {object.description}</Typography>
         </Box>

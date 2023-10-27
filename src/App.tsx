@@ -1,51 +1,20 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-// import { Paper } from '@mui/material';
-import { IndustrialProvider, PlacementPosition, Status } from 'mui-industrial';
-// import { useState } from 'react';
-import { Entity, Scene } from 'aframe-react';
-import ReactFlow, { Background, Controls, MiniMap, Panel } from 'reactflow';
+import { Box } from '@mui/material';
+import { Suspense } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import 'reactflow/dist/style.css';
 import './App.css';
-import { CustomImportList } from './components/CustomImportList';
-import { SPaper } from './components/CustomPaper/css';
-import NodeSceneMain from './components/NodeSceneMain';
-
-function App() {
-  // const [selectedParts, setSelectedParts] = useState<string[]>([]);
-
-
-  const nodeTypes = {
-    sceneMain: NodeSceneMain,
-  };
-
-  const initialNodes = [
-    { id: '1', type: 'sceneMain', style: { border: '1px dotted #CCC', padding: 10 }, position: { x: 0, y: 0 }, data: { label: '1' } },
-    { id: '2', position: { x: 700, y: 100 }, data: { label: '2' } },
-  ];
-  const initialEdges = [{ id: 'e1-2', source: '1', target: '2' }];
-
-  return (
-    <IndustrialProvider position={PlacementPosition.BOTTOM} style={{ width: "100%", height: "30px" }}>
-    <div style={{ width: '100%', position: 'absolute', height: '100%', color: 'black' }}>
-      <ReactFlow nodeTypes={nodeTypes} nodes={initialNodes} edges={initialEdges} fitView>
-
-      <Panel position="top-left">
-        <SPaper>
-          <CustomImportList />
-        </SPaper>
-      </Panel>
-
-        <Background color="#aaa" gap={16} />
-        <MiniMap />
-        <Controls />
-      </ReactFlow>
-
-    </div>
-    <Status id='sampleStatus'>
-      <Status.Template text='Sample Status' />
-    </Status>
-    </IndustrialProvider>
-  )
+import Toolbar from './components/Toolbar';
+import routes from './routes';
+export default function App() {
+  return <>
+    <BrowserRouter>
+      <Toolbar />
+      <Box style={{ flex: '1 1 auto'}} display="flex" alignSelf={'stretch'} >
+        <Routes>
+          {routes.map(route => <Route key={route.path} {...{ ...route, element: <Suspense fallback={<></>}>{route.component}</Suspense> }} />)}
+          <Route {...{ path: '*', element: <div>404</div> }} />
+        </Routes>
+      </Box>
+    </BrowserRouter>
+  </>
 }
-
-export default App
