@@ -7,17 +7,17 @@ import { GetEntity } from '../data/GetEntity';
 import { UpdateEntity } from '../data/UpdateEntity';
 
 export default function Editor() {
-  const [entity, setEntity] = useState<any>([]);
+  const [entity, setEntity] = useState<any>(null);
   const [needsUpdate, setNeedsUpdate] = useState<any>(false);
   const { id } = useParams<any>();
 
   if (!id) return null
 
   return <>
-    <GetEntity key={id} entityId={id} onLoad={setEntity} />
-    {needsUpdate && <UpdateEntity entityId={id} payload={entity} onSuccess={() => setNeedsUpdate(false)} />}
+    {!entity && <GetEntity key={id} entityId={id} onLoad={setEntity} />}
+    {needsUpdate && entity && <UpdateEntity entityId={id} payload={entity} onSuccess={() => setNeedsUpdate(false)} />}
 
-    <Box display="flex" sx={{ flexDirection: 'row', alignItems: 'stretch', gap: '16px' }} flexGrow={1} p={2}>
+    {entity && <Box display="flex" sx={{ flexDirection: 'row', alignItems: 'stretch', gap: '16px' }} flexGrow={1} p={2}>
       <TextField
         autoFocus
         value={entity.body}
@@ -35,6 +35,6 @@ export default function Editor() {
           <a-box dangerouslySetInnerHTML={{ __html: entity.body }} />
         </a-scene>
       </Box>
-    </Box>
+    </Box>}
   </>
 }
