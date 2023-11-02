@@ -17,7 +17,12 @@
     {
       "id": 1,
       "name": "entity1",
-      "body": "<a-text position=\"-1 0.5 -3\" color=\"#4CC3D9\" value=\"Hello, Worrrrld!\"></a-text>\n<a-sphere position=\"0 1.25 -5\" radius=\"1.25\" color=\"#EF2D5E\"></a-sphere>\n<a-sky color=\"#ECECEC\"></a-sky>"
+      "body": "<a-text position=\"-1 0.5 -3\" color=\"#4CC3D9\" value=\"Hello, Worrrrld!\"></a-text>\n<a-sphere position=\"0 1.25 -5\" radius=\"0.25\" color=\"#EF2D5E\"></a-sphere>\n<a-sky color=\"#ECECEC\"></a-sky>"
+    },
+    {
+      "id": 2,
+      "name": "entity1",
+      "body": "<a-text position=\"-1 0.5 -3\" color=\"#4CC3D9\" value=\"Hello, test!\"></a-text>\n<a-sphere position=\"0 1.25 -5\" radius=\"0.25\" color=\"#EF2D5E\"></a-sphere>\n<a-sky color=\"#ECECEC\"></a-sky>"
     }
   ],
   "profile": {

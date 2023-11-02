@@ -5,11 +5,13 @@ import { apiURL } from '../main';
 export const UpdateEntity = ({
   entityId,
   payload,
-  onLoad = () => {}
+  onSuccess = () => {},
+  onError = () => {}
 } : {
   entityId: string,
   payload: any,
-  onLoad: (data: any) => void
+  onSuccess: (data: any) => void,
+  onError?: (data: any) => void
 }) => {
 
   useEffect(() => {
@@ -22,11 +24,12 @@ export const UpdateEntity = ({
     }).then((response) => {
       return response.json();
     }).then((data) => {
-      onLoad(data);
+      onSuccess(data);
     }).catch((err) => {
       console.error(err);
+      onError(err);
     })
-  }, [entityId, payload, onLoad]);
+  }, [entityId, payload, onSuccess, onError]);
 
   return null
 }
