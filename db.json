@@ -17,7 +17,7 @@
     {
       "id": 1,
       "name": "entity1",
-      "body": "<a-box position=\"0 0.5 -7\" rotation=\"0 0 0\" color=\"#CCCCCC\" shadow=\"\" material=\"\" geometry=\"\" scale=\"7 1 1\"></a-box>\n<a-entity light=\"intensity: 0.96; castShadow: true\" position=\"0 4 2\"></a-entity>\n",
+      "body": "<a-box position=\"0 0.5 -7\" rotation=\"0 0 0\" color=\"#CCCCCC\" shadow=\"\" material=\"\" geometry=\"\" scale=\"{{width}} 1 1\"></a-box>\n<a-entity light=\"intensity: 0.96; castShadow: true\" position=\"0 4 2\"></a-entity>\n",
       "title": "Title important stuff",
       "published": false,
       "pure": true,
@@ -29,6 +29,22 @@
         }
       ],
       "processedBody": "<a-box position=\"0 0.5 -7\" rotation=\"0 0 0\" color=\"#CCCCCC\" shadow=\"\" material=\"\" geometry=\"\" scale=\"7 1 1\"></a-box>\n<a-entity light=\"intensity: 0.96; castShadow: true\" position=\"0 4 2\"></a-entity>\n"
+    },
+    {
+      "id": 4,
+      "name": "entity3",
+      "body": "<a-box position=\"0 0.5 -7\" rotation=\"0 0 0\" color=\"#CCCCCC\" shadow=\"\" material=\"\" geometry=\"\" scale=\"{{width}} 1 1\"></a-box>\n<a-entity light=\"intensity: 0.96; castShadow: true\" position=\"0 4 2\"></a-entity>\n",
+      "title": "Title important stuff",
+      "published": false,
+      "pure": true,
+      "variables": true,
+      "variableList": [
+        {
+          "name": "width",
+          "value": "2"
+        }
+      ],
+      "processedBody": "<a-box position=\"0 0.5 -7\" rotation=\"0 0 0\" color=\"#CCCCCC\" shadow=\"\" material=\"\" geometry=\"\" scale=\"2 1 1\"></a-box>\n<a-entity light=\"intensity: 0.96; castShadow: true\" position=\"0 4 2\"></a-entity>\n"
     },
     {
       "id": 2,

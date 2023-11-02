@@ -14,6 +14,14 @@ export default function Editor() {
 
   if (!id) return null
 
+  const processBody = (body: string) => {
+    let processedBody = body;
+    entity.variableList.forEach((variableItem: any) => {
+      processedBody = processedBody.replace(new RegExp(`{{${variableItem.name}}}`, 'g'), variableItem.value)
+    })
+    return processedBody
+  }
+
   return <>
     {!entity && <GetEntity key={id} entityId={id} onLoad={setEntity} />}
     {needsUpdate && entity && <UpdateEntity entityId={id} payload={entity} onSuccess={() => setNeedsUpdate(false)} />}
@@ -92,7 +100,7 @@ export default function Editor() {
           rows={10}
           fullWidth={true}
           onChange={(e) => {
-            setEntity({...entity, body: e.target.value, processedBody: e.target.value})
+            setEntity({...entity, body: e.target.value, processedBody: processBody(e.target.value)})
             setNeedsUpdate(true)
           }}
         />

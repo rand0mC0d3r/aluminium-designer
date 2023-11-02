@@ -4,6 +4,7 @@
 // import 'aframe';
 import AnchorIcon from '@mui/icons-material/Anchor';
 // import { Entity, Scene } from 'aframe-react';
+import BoltOutlinedIcon from '@mui/icons-material/BoltOutlined';
 import { Box, Chip, Typography } from '@mui/material';
 import { memo, useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -31,13 +32,14 @@ export default memo(({ data, isConnectable }: { data: any, isConnectable: boolea
 
         <Box display={'flex'} sx={{ gap: '8px'}}>
           {entity?.pure && <Chip variant='outlined' label={<AnchorIcon />} />}
+          {entity?.variables && <Chip variant='outlined' label={<BoltOutlinedIcon />} />}
           <Chip variant='outlined' label={`Qty: 3`} />
           <Link to={`/editor/${data.id}`}>
             <Chip color="primary" variant='outlined' label={`Edit`} />
           </Link>
         </Box>
       {/* </div>)} */}
-        {entity && <PreviewEntity body={entity.body} style={{ height: '300px', width: '300px'}} />}
+        {entity && <PreviewEntity body={entity.processedBody} style={{ height: '300px', width: '300px'}} />}
         {/* <a-scene embedded>
           <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
           <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
@@ -48,6 +50,10 @@ export default memo(({ data, isConnectable }: { data: any, isConnectable: boolea
         </a-scene> */}
 
         <Typography>{entity?.title || 'Preview'}: <strong>{data.id}</strong></Typography>
+        {entity?.variableList?.map(variableItem => <Chip
+          key={variableItem.name}
+          label={`${variableItem.name} : ${variableItem.value}`}
+          />)}
       </Box>
       {/* <input className="nodrag" type="color" onChange={data.onChange} defaultValue={data.color} /> */}
       <Handle
