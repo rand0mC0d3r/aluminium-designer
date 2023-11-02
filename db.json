@@ -25,10 +25,10 @@
       "variableList": [
         {
           "name": "width",
-          "value": "7"
+          "value": 5
         }
       ],
-      "processedBody": "<a-box position=\"0 0.5 -7\" rotation=\"0 0 0\" color=\"#CCCCCC\" shadow=\"\" material=\"\" geometry=\"\" scale=\"7 1 1\"></a-box>\n<a-entity light=\"intensity: 0.96; castShadow: true\" position=\"0 4 2\"></a-entity>\n"
+      "processedBody": "<a-box position=\"0 0.5 -7\" rotation=\"0 0 0\" color=\"#CCCCCC\" shadow=\"\" material=\"\" geometry=\"\" scale=\"5 1 1\"></a-box>\n<a-entity light=\"intensity: 0.96; castShadow: true\" position=\"0 4 2\"></a-entity>\n"
     },
     {
       "id": 4,
@@ -41,10 +41,10 @@
       "variableList": [
         {
           "name": "width",
-          "value": "2"
+          "value": 12
         }
       ],
-      "processedBody": "<a-box position=\"0 0.5 -7\" rotation=\"0 0 0\" color=\"#CCCCCC\" shadow=\"\" material=\"\" geometry=\"\" scale=\"2 1 1\"></a-box>\n<a-entity light=\"intensity: 0.96; castShadow: true\" position=\"0 4 2\"></a-entity>\n"
+      "processedBody": "<a-box position=\"0 0.5 -7\" rotation=\"0 0 0\" color=\"#CCCCCC\" shadow=\"\" material=\"\" geometry=\"\" scale=\"12 1 1\"></a-box>\n<a-entity light=\"intensity: 0.96; castShadow: true\" position=\"0 4 2\"></a-entity>\n"
     },
     {
       "id": 2,

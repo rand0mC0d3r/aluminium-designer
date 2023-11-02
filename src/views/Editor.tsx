@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Box, Button, Checkbox, Chip, TextField, Typography } from '@mui/material';
-import { useState } from 'react';
+import { Box, Button, Checkbox, Chip, Slider, TextField, Typography } from '@mui/material';
+import { useCallback, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import 'reactflow/dist/style.css';
 import { GetEntity } from '../data/GetEntity';
@@ -14,17 +14,31 @@ export default function Editor() {
 
   if (!id) return null
 
-  const processBody = (body: string) => {
+  const processBody = useCallback((body: string) => {
     let processedBody = body;
     entity.variableList.forEach((variableItem: any) => {
       processedBody = processedBody.replace(new RegExp(`{{${variableItem.name}}}`, 'g'), variableItem.value)
     })
     return processedBody
-  }
+  }, [entity])
+
+  // useEffect(() => {
+  //   if (!needsUpdate && entity) {
+  //     setEntity({...entity, processedBody: processBody(entity.body)})
+  //     // setNeedsUpdate(true)
+  //   }
+
+  // }, [entity, processBody, needsUpdate])
 
   return <>
     {!entity && <GetEntity key={id} entityId={id} onLoad={setEntity} />}
-    {needsUpdate && entity && <UpdateEntity entityId={id} payload={entity} onSuccess={() => setNeedsUpdate(false)} />}
+    {needsUpdate && entity && <UpdateEntity
+    entityId={id}
+    payload={{...entity, processedBody: processBody(entity.body)}}
+    onSuccess={(data) => {
+      setEntity(data)
+      setNeedsUpdate(false)
+    }} />}
 
     {entity && <Box display="flex" sx={{ flexDirection: 'row', alignItems: 'stretch', gap: '16px' }} flexGrow={1} p={2}>
 
@@ -50,7 +64,26 @@ export default function Editor() {
           {entity.variableList.map(variableItem => <Chip
             key={variableItem.name}
             variant='outlined'
-            label={`${variableItem.name} : ${variableItem.value}`}
+            label={<Box display='flex' sx={{ gap: '16px'}} alignItems={'center'}>
+              <Typography variant="caption">{variableItem.name} : {variableItem.value}</Typography>
+              <Slider
+                onChangeCommitted={(e : any, newValue) => {
+                  setEntity({...entity, variableList: entity.variableList.map((item: any) => {
+                    if (item.name === variableItem.name) {
+                      return {...item, value: newValue}
+                    }
+                    return item
+                  })})
+                  setNeedsUpdate(true)
+                }}
+                min={0}
+                max={20}
+                step={1}
+                value={variableItem.value}
+                style={{ width: '100px'}}
+                size='small'
+               />
+            </Box>}
             onDelete={() => {
               setEntity({...entity, variableList: entity.variableList.filter((item: any) => item.name !== variableItem.name)})
               setNeedsUpdate(true)
@@ -88,7 +121,7 @@ export default function Editor() {
           fullWidth={true}
           onChange={(e) => {
             setEntity({...entity, title: e.target.value})
-            setNeedsUpdate(true)
+            // setNeedsUpdate(true)
           }}
         />
 
