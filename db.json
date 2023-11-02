@@ -17,7 +17,7 @@
     {
       "id": 1,
       "name": "entity1",
-      "body": "<a-text position=\"-1 0.5 -3\" color=\"#4CC3D9\" value=\"Hello, Worrrrld!\"></a-text>\n<a-sphere position=\"0 1.25 -5\" radius=\"0.25\" color=\"#EF2D5E\"></a-sphere>\n<a-sky color=\"#ECECEC\"></a-sky>",
+      "body": "<a-box position=\"0 0.5 -7\" rotation=\"0 0 0\" color=\"#CCCCCC\" shadow=\"\" material=\"\" geometry=\"\" scale=\"7 1 1\"></a-box>\n<a-entity light=\"intensity: 0.96; castShadow: true\" position=\"0 1 -1\"></a-entity>",
       "title": "df",
       "published": false,
       "pure": true

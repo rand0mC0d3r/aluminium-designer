@@ -3,7 +3,6 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import { AppBar, Badge, Box, Button, IconButton, Toolbar, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
 import routes from '../../routes';
-import GetFileHandler from './GetFileHandler';
 
 export default function AppToolbar() {
   return (
@@ -18,13 +17,12 @@ export default function AppToolbar() {
           Aluminium Designer
         </Typography>
         <Box sx={{ flexGrow: 1 }} />
-        <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: "8px" }} >
-          {routes.map((route) => <Button variant="contained" key={route.path}>
-            <Link to={route.path} style={{ textDecoration: 'none', color: 'white' }} key={route.path}>
+        <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: "8px" }} alignItems={'center'} >
+          {routes.map((route) => <Link key={route.path} to={route.path} style={{ textDecoration: 'none', color: 'white' }} key={route.path}>
+            <Button variant="contained" >
               {route.label}
-            </Link>
-          </Button>)}
-          <GetFileHandler />
+            </Button>
+          </Link>)}
           <IconButton size="large" aria-label="show 4 new mails" color="inherit">
             <Badge badgeContent={4} color="error">
               <MailIcon />

@@ -18,21 +18,19 @@ export default memo(({ data, isConnectable }: { data: any, isConnectable: boolea
   return (
     <>
       <GetEntity key={data.id} entityId={data.id} onLoad={setEntity} />
-{/*
-      <Handle
+
+      {!entity?.pure && <Handle
         type="target"
         position={Position.Left}
-        style={{ background: '#555' }}
+        style={{ top: '40%', background: '#555' }}
         onConnect={(params) => console.log('handle onConnect', params)}
         isConnectable={isConnectable}
-      /> */}
+      />}
+
       <Box display={'flex'} flexDirection={'column'} sx={{ gap: '8px'}}>
 
-        <AnchorIcon />
-
-        <Typography>Preview: <strong>{data.id}</strong></Typography>
-
         <Box display={'flex'} sx={{ gap: '8px'}}>
+          {entity?.pure && <Chip variant='outlined' label={<AnchorIcon />} />}
           <Chip variant='outlined' label={`Qty: 3`} />
           <Link to={`/editor/${data.id}`}>
             <Chip color="primary" variant='outlined' label={`Edit`} />
@@ -48,16 +46,18 @@ export default memo(({ data, isConnectable }: { data: any, isConnectable: boolea
           <a-sky color="#ECECEC"></a-sky>
           <a-entity camera orbit-controls="target: 0 1.6 -0.5; minDistance: 0.5; maxDistance: 180; initialPosition: 0 5 15"></a-entity>
         </a-scene> */}
+
+        <Typography>{entity?.title || 'Preview'}: <strong>{data.id}</strong></Typography>
       </Box>
       {/* <input className="nodrag" type="color" onChange={data.onChange} defaultValue={data.color} /> */}
-      {/* <Handle
+      <Handle
         type="source"
         position={Position.Right}
         id="a"
-        style={{ top: 10, background: '#555' }}
+        style={{ top: '40%', background: '#555' }}
         isConnectable={isConnectable}
       />
-      <Handle
+      {/* <Handle
         type="source"
         position={Position.Right}
         id="b"
