@@ -3,6 +3,7 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import { AppBar, Badge, Box, Button, IconButton, Toolbar, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
 import routes from '../../routes';
+import GetFileHandler from './GetFileHandler';
 
 export default function AppToolbar() {
   return (
@@ -23,6 +24,7 @@ export default function AppToolbar() {
               {route.label}
             </Link>
           </Button>)}
+          <GetFileHandler />
           <IconButton size="large" aria-label="show 4 new mails" color="inherit">
             <Badge badgeContent={4} color="error">
               <MailIcon />

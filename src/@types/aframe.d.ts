@@ -8,5 +8,6 @@ declare namespace JSX {
     'a-plane': any;
     'a-sky': any;
     'a-entity': any;
+    'a-text': any;
   }
 }

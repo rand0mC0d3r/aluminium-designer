@@ -4,12 +4,17 @@ import { Typography } from '@mui/material';
 import { IndustrialProvider, PlacementPosition, Status } from 'mui-industrial';
 // import { useState } from 'react';
 // import ReactFlow, { Background, Controls, MiniMap, Panel } from 'reactflow';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import 'reactflow/dist/style.css';
+import { GetEntities } from '../../data/GetEntities';
+import GetFiles from './GetFiles';
 // import { CustomImportList } from './components/CustomImportList';
 // import { SPaper } from './components/CustomPaper/css';
 // import NodeSceneMain from './components/NodeSceneMain';
 
 export default function Designer() {
+  const [entities, setEntities] = useState<any[]>([]);
   // const [selectedParts, setSelectedParts] = useState<string[]>([]);
 
 
@@ -39,7 +44,14 @@ export default function Designer() {
         <MiniMap />
         <Controls />
       </ReactFlow> */}
-<Typography color="secondary">ddd designer</Typography>
+      {/* dd */}
+      {/* {JSON.stringify(entities)} */}
+      {entities.map((entity) => <>
+        <Link to={`/preview/${entity.id}`}>{entity.id}</Link>
+      </>)}
+      {/* ff */}
+<GetEntities onLoad={setEntities} />
+{/* <GetFiles /> */}
     {/* </div> */}
     {/* <Status id='sampleStatus'> */}
       {/* <Status.Template text='Sample Status' /> */}
