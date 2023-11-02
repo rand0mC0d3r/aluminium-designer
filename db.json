@@ -17,10 +17,18 @@
     {
       "id": 1,
       "name": "entity1",
-      "body": "<a-box position=\"0 0.5 -7\" rotation=\"0 0 0\" color=\"#CCCCCC\" shadow=\"\" material=\"\" geometry=\"\" scale=\"7 1 1\"></a-box>\n<a-entity light=\"intensity: 0.96; castShadow: true\" position=\"0 1 -1\"></a-entity>",
-      "title": "df",
+      "body": "<a-box position=\"0 0.5 -7\" rotation=\"0 0 0\" color=\"#CCCCCC\" shadow=\"\" material=\"\" geometry=\"\" scale=\"7 1 1\"></a-box>\n<a-entity light=\"intensity: 0.96; castShadow: true\" position=\"0 4 2\"></a-entity>\n",
+      "title": "Title important stuff",
       "published": false,
-      "pure": true
+      "pure": true,
+      "variables": true,
+      "variableList": [
+        {
+          "name": "width",
+          "value": "7"
+        }
+      ],
+      "processedBody": "<a-box position=\"0 0.5 -7\" rotation=\"0 0 0\" color=\"#CCCCCC\" shadow=\"\" material=\"\" geometry=\"\" scale=\"7 1 1\"></a-box>\n<a-entity light=\"intensity: 0.96; castShadow: true\" position=\"0 4 2\"></a-entity>\n"
     },
     {
       "id": 2,
