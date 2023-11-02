@@ -17,18 +17,26 @@
     {
       "id": 1,
       "name": "entity1",
-      "body": "<a-box position=\"0 0.5 -7\" rotation=\"0 0 0\" color=\"#CCCCCC\" shadow=\"\" material=\"\" geometry=\"\" scale=\"{{width}} 1 1\"></a-box>\n<a-entity light=\"intensity: 0.96; castShadow: true\" position=\"0 4 2\"></a-entity>\n",
-      "title": "Title important stuff",
+      "body": "<a-box position=\"0 {{{{height}}/2}} 0\" rotation=\"0 0 0\" color=\"#CCCCCC\" scale=\"{{{{width}}}} 0.1 {{thickness}}\"></a-box>\n<a-box position=\"0 {{-{{height}}/2}} 0\" rotation=\"0 0 0\" color=\"#CCCCCC\" scale=\"{{width}} 0.1 {{thickness}}\"></a-box>\n\n<a-box position=\"0 {{{{height}}/2}} -2\" rotation=\"0 0 0\" color=\"#CCCCCC\" scale=\"{{width}} {{thickness}} 0.1\"></a-box>\n<a-box position=\"0 -1.5 -14\" rotation=\"0 0 0\" color=\"#CCCCCC\" scale=\"{{width}} {{thickness}} 0.1\"></a-box>\n\n\n<a-entity light=\"intensity: 0.96; castShadow: true\" position=\"0 4 1\"></a-entity>\n<a-entity camera=\"active: true\" position=\"0 1.6 9\" wasd-controls=\"\" rotation=\"\" look-controls=\"enabled: true\" aframe-injected=\"\" data-aframe-inspector-original-camera=\"\" visible=\"\"></a-entity>",
+      "title": "Title important stuff 7e/m3",
       "published": false,
       "pure": true,
       "variables": true,
       "variableList": [
         {
           "name": "width",
-          "value": 5
+          "value": 15
+        },
+        {
+          "name": "thickness",
+          "value": 2
+        },
+        {
+          "name": "height",
+          "value": 2
         }
       ],
-      "processedBody": "<a-box position=\"0 0.5 -7\" rotation=\"0 0 0\" color=\"#CCCCCC\" shadow=\"\" material=\"\" geometry=\"\" scale=\"5 1 1\"></a-box>\n<a-entity light=\"intensity: 0.96; castShadow: true\" position=\"0 4 2\"></a-entity>\n"
+      "processedBody": "<a-box position=\"0 1 0\" rotation=\"0 0 0\" color=\"#CCCCCC\" scale=\"15 0.1 2\"></a-box>\n<a-box position=\"0 -1 0\" rotation=\"0 0 0\" color=\"#CCCCCC\" scale=\"15 0.1 2\"></a-box>\n\n<a-box position=\"0 1 -2\" rotation=\"0 0 0\" color=\"#CCCCCC\" scale=\"15 2 0.1\"></a-box>\n<a-box position=\"0 -1.5 -14\" rotation=\"0 0 0\" color=\"#CCCCCC\" scale=\"15 2 0.1\"></a-box>\n\n\n<a-entity light=\"intensity: 0.96; castShadow: true\" position=\"0 4 1\"></a-entity>\n<a-entity camera=\"active: true\" position=\"0 1.6 9\" wasd-controls=\"\" rotation=\"\" look-controls=\"enabled: true\" aframe-injected=\"\" data-aframe-inspector-original-camera=\"\" visible=\"\"></a-entity>"
     },
     {
       "id": 4,

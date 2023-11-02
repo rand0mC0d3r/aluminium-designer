@@ -2,6 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 // import { Paper } from '@mui/material';
 // import { useState } from 'react';
+import { Box } from '@mui/material';
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import 'reactflow/dist/style.css';
@@ -21,8 +22,13 @@ export default function Preview() {
 
   return <>
     <GetEntity entityId={id} onLoad={setEntity} />
-    {id} {JSON.stringify(entity)}
+    {/* {id} {JSON.stringify(entity)} */}
 
+      {/* <Box style={{ flex: '0 0 50%', height: '100%', overflow: 'hidden'}} sx={{ border: '1px solid', borderRadius: '8px'}}> */}
+        <a-scene embedded>
+          <a-box dangerouslySetInnerHTML={{ __html: entity.processedBody }} />
+        </a-scene>
+      {/* </Box> */}
 
     {/* <textarea value={JSON.stringify(entity, null, 2)} readOnly={true} style={{ width: '100%', height: '100%' }} /> */}
     {/* <a-scene>

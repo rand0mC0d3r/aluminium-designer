@@ -16,10 +16,20 @@ export default function Editor() {
 
   const processBody = useCallback((body: string) => {
     let processedBody = body;
+    const regex = /{{(.*?)}}/g;
+
     entity.variableList.forEach((variableItem: any) => {
-      processedBody = processedBody.replace(new RegExp(`{{${variableItem.name}}}`, 'g'), variableItem.value)
+      processedBody = processedBody.replace(new RegExp(`{{${variableItem.name}}}`, 'g'), `${variableItem.value}`)
     })
-    return processedBody
+    return processedBody.replace(regex, (_, expr) => {
+    try {
+      // Evaluate the expression
+      return eval(expr);
+    } catch (e) {
+      console.error(`Failed to evaluate expression "${expr}": ${e}`);
+      return '';
+    }
+  });
   }, [entity])
 
   // useEffect(() => {
@@ -121,7 +131,7 @@ export default function Editor() {
           fullWidth={true}
           onChange={(e) => {
             setEntity({...entity, title: e.target.value})
-            // setNeedsUpdate(true)
+            setNeedsUpdate(true)
           }}
         />
 
@@ -130,7 +140,7 @@ export default function Editor() {
           autoFocus
           value={entity.body}
           multiline={true}
-          rows={10}
+          rows={20}
           fullWidth={true}
           onChange={(e) => {
             setEntity({...entity, body: e.target.value, processedBody: processBody(e.target.value)})
