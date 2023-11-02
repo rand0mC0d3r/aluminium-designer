@@ -1,5 +1,8 @@
+import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOutlined';
+import DeleteForeverOutlinedIcon from '@mui/icons-material/DeleteForeverOutlined';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
+import PointOfSaleOutlinedIcon from '@mui/icons-material/PointOfSaleOutlined';
 import RestoreIcon from '@mui/icons-material/Restore';
 import { BottomNavigation, BottomNavigationAction, Box, } from '@mui/material';
 import { useState } from 'react';
@@ -11,7 +14,7 @@ export const CustomImportList = () => {
     {
       id: '1',
       label: "Random Label Lorem",
-      description: "Random Description Lorem",
+      description: "Random Description Lordddem",
       code: [
         <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>,
         <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>,
@@ -46,9 +49,9 @@ export const CustomImportList = () => {
         setValue(newValue);
       }}
     >
-      <BottomNavigationAction label="Recents" icon={<RestoreIcon />} />
-      <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />} />
-      <BottomNavigationAction label="Nearby" icon={<LocationOnIcon />} />
+      <BottomNavigationAction label="Add" icon={<AddCircleOutlineOutlinedIcon />} />
+      <BottomNavigationAction label="Delete" icon={<DeleteForeverOutlinedIcon />} />
+      <BottomNavigationAction label="Costs" icon={<PointOfSaleOutlinedIcon />} />
     </BottomNavigation>
 
       {objects.map((object) => (

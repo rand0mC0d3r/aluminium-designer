@@ -172,3 +172,12 @@ export default function Editor() {
     </Box>}
   </>
 }
+{/* <a-box position="0 {{-{{height}}/2}} 0" rotation="0 0 0" color="#CCCCCC" scale="{{width}} {{height}} {{thickness}}"></a-box>
+
+<a-box position="0 0 {{-{{height}}/2}}" rotation="0 0 0" color="#CCCCCC" scale="{{width}} {{thickness}} {{height}}"></a-box>
+<a-box position="0 0 {{{{height}}/2}}" rotation="0 0 0" color="#CCCCCC" scale="{{width}} {{thickness}} {{height}}"></a-box> */}
+
+
+
+// <a-box position="0 {{{{height}}}} {{-{{height}}/2}}" rotation="0 0 0" color="#CCCCCC" scale="{{width}} {{{{thickness}}/10}} {{height}}"></a-box>
+// <a-box position="0 {{-{{height}}/2}} {{{{height}}/2}}" rotation="0 0 0" color="#CCCCCC" scale="{{width}} {{{{thickness}}/10}} {{height}}"></a-box>

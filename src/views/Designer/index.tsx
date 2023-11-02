@@ -8,15 +8,17 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import ReactFlow, { Background, Controls, MiniMap, Panel } from 'reactflow';
 import 'reactflow/dist/style.css';
+import { CustomImportList } from '../../components/CustomImportList';
+import { SPaper } from '../../components/CustomPaper/css';
+import { DesignerPanel } from '../../components/DesignerPanel';
+import NodeSceneMain from '../../components/NodeSceneMain';
 import { GetEntities } from '../../data/GetEntities';
 import GetFiles from './GetFiles';
-// import { CustomImportList } from './components/CustomImportList';
-// import { SPaper } from './components/CustomPaper/css';
-import NodeSceneMain from '../../components/NodeSceneMain';
 
 export default function Designer() {
   const [entities, setEntities] = useState<any[]>([]);
   const [nodes, setNodes] = useState<any[]>([]);
+
 
   useEffect(() => {
     setNodes(entities.map((entity, i) => {
@@ -41,11 +43,12 @@ export default function Designer() {
     {/* <div style={{ width: '100%', position: 'absolute', height: '100%', color: 'black' }}> */}
       {nodes.length > 0 && <ReactFlow nodeTypes={nodeTypes} nodes={nodes} edges={[]} fitView nodesDraggable>
 
-      {/* <Panel position="top-left">
+      <Panel position="top-left">
         <SPaper>
-          <CustomImportList />
+          <DesignerPanel entities={entities} />
+          {/* <CustomImportList /> */}
         </SPaper>
-      </Panel> */}
+      </Panel>
 
         <Background color="#aaa" gap={16} />
         <MiniMap />

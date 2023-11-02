@@ -17,7 +17,7 @@
     {
       "id": 1,
       "name": "entity1",
-      "body": "<a-box position=\"0 {{{{height}}/2}} 0\" rotation=\"0 0 0\" color=\"#CCCCCC\" scale=\"{{{{width}}}} 0.1 {{thickness}}\"></a-box>\n<a-box position=\"0 {{-{{height}}/2}} 0\" rotation=\"0 0 0\" color=\"#CCCCCC\" scale=\"{{width}} 0.1 {{thickness}}\"></a-box>\n\n<a-box position=\"0 {{{{height}}/2}} -2\" rotation=\"0 0 0\" color=\"#CCCCCC\" scale=\"{{width}} {{thickness}} 0.1\"></a-box>\n<a-box position=\"0 -1.5 -14\" rotation=\"0 0 0\" color=\"#CCCCCC\" scale=\"{{width}} {{thickness}} 0.1\"></a-box>\n\n\n<a-entity light=\"intensity: 0.96; castShadow: true\" position=\"0 4 1\"></a-entity>\n<a-entity camera=\"active: true\" position=\"0 1.6 9\" wasd-controls=\"\" rotation=\"\" look-controls=\"enabled: true\" aframe-injected=\"\" data-aframe-inspector-original-camera=\"\" visible=\"\"></a-entity>",
+      "body": "<a-entity light=\"intensity: 0.8; type: ambient\" position=\"0 -1 2\"></a-entity>\n<a-entity light=\"intensity: 0.2; castShadow: true\" position=\"0 -1 2\"></a-entity>\n\n<a-entity rotation=\"0 95 15\">\n<a-box position=\"0 {{{{height}}/2}} 0\" rotation=\"0 0 0\" color=\"#CCCCCC\" scale=\"{{{{width}}}} {{{{thickness}}/10}} {{height}}\"></a-box>\n<a-box position=\"0 {{-{{height}}/2}} 0\" rotation=\"0 0 0\" color=\"#CCCCCC\" scale=\"{{{{width}}}} {{{{thickness}}/10}} {{height}}\"></a-box>\n<a-box position=\"0 0 {{-{{height}}/2}}\" rotation=\"90 0 0\" color=\"#CCCCCC\" scale=\"{{{{width}}}} {{{{thickness}}/10}} {{height}}\"></a-box>\n<a-box position=\"0 0 {{{{height}}/2}}\" rotation=\"90 0 0\" color=\"#CCCCCC\" scale=\"{{{{width}}}} {{{{thickness}}/10}} {{height}}\"></a-box>\n</a-entity>\n\n<a-entity camera=\"active: true\" position=\"0 2 15\" wasd-controls=\"\" rotation=\"\" look-controls=\"enabled: true\" aframe-injected=\"\" data-aframe-inspector-original-camera=\"\" visible=\"\"></a-entity>",
       "title": "Title important stuff 7e/m3",
       "published": false,
       "pure": true,
@@ -25,18 +25,18 @@
       "variableList": [
         {
           "name": "width",
-          "value": 15
+          "value": 8
         },
         {
           "name": "thickness",
-          "value": 2
+          "value": 4
         },
         {
           "name": "height",
-          "value": 2
+          "value": 4
         }
       ],
-      "processedBody": "<a-box position=\"0 1 0\" rotation=\"0 0 0\" color=\"#CCCCCC\" scale=\"15 0.1 2\"></a-box>\n<a-box position=\"0 -1 0\" rotation=\"0 0 0\" color=\"#CCCCCC\" scale=\"15 0.1 2\"></a-box>\n\n<a-box position=\"0 1 -2\" rotation=\"0 0 0\" color=\"#CCCCCC\" scale=\"15 2 0.1\"></a-box>\n<a-box position=\"0 -1.5 -14\" rotation=\"0 0 0\" color=\"#CCCCCC\" scale=\"15 2 0.1\"></a-box>\n\n\n<a-entity light=\"intensity: 0.96; castShadow: true\" position=\"0 4 1\"></a-entity>\n<a-entity camera=\"active: true\" position=\"0 1.6 9\" wasd-controls=\"\" rotation=\"\" look-controls=\"enabled: true\" aframe-injected=\"\" data-aframe-inspector-original-camera=\"\" visible=\"\"></a-entity>"
+      "processedBody": "<a-entity light=\"intensity: 0.8; type: ambient\" position=\"0 -1 2\"></a-entity>\n<a-entity light=\"intensity: 0.2; castShadow: true\" position=\"0 -1 2\"></a-entity>\n\n<a-entity rotation=\"0 95 15\">\n<a-box position=\"0 2 0\" rotation=\"0 0 0\" color=\"#CCCCCC\" scale=\"8 0.4 4\"></a-box>\n<a-box position=\"0 -2 0\" rotation=\"0 0 0\" color=\"#CCCCCC\" scale=\"8 0.4 4\"></a-box>\n<a-box position=\"0 0 -2\" rotation=\"90 0 0\" color=\"#CCCCCC\" scale=\"8 0.4 4\"></a-box>\n<a-box position=\"0 0 2\" rotation=\"90 0 0\" color=\"#CCCCCC\" scale=\"8 0.4 4\"></a-box>\n</a-entity>\n\n<a-entity camera=\"active: true\" position=\"0 2 15\" wasd-controls=\"\" rotation=\"\" look-controls=\"enabled: true\" aframe-injected=\"\" data-aframe-inspector-original-camera=\"\" visible=\"\"></a-entity>"
     },
     {
       "id": 4,
@@ -49,10 +49,10 @@
       "variableList": [
         {
           "name": "width",
-          "value": 12
+          "value": 5
         }
       ],
-      "processedBody": "<a-box position=\"0 0.5 -7\" rotation=\"0 0 0\" color=\"#CCCCCC\" shadow=\"\" material=\"\" geometry=\"\" scale=\"12 1 1\"></a-box>\n<a-entity light=\"intensity: 0.96; castShadow: true\" position=\"0 4 2\"></a-entity>\n"
+      "processedBody": "<a-box position=\"0 0.5 -7\" rotation=\"0 0 0\" color=\"#CCCCCC\" shadow=\"\" material=\"\" geometry=\"\" scale=\"5 1 1\"></a-box>\n<a-entity light=\"intensity: 0.96; castShadow: true\" position=\"0 4 2\"></a-entity>\n"
     },
     {
       "id": 2,
