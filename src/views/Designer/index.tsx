@@ -23,7 +23,7 @@ export default function Designer() {
       return {
         id: String(entity.id),
         type: 'sceneMain',
-        style: { border: '1px dotted #CCC', padding: 10 },
+        style: { border: '1px dotted #CCC', padding: 16, borderRadius: 8 },
         position: { x: i * 500, y: i * 400 },
         data: { id: entity.id }
       }

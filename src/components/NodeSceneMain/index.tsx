@@ -2,8 +2,11 @@
 /* eslint-disable react-refresh/only-export-components */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 // import 'aframe';
+import AnchorIcon from '@mui/icons-material/Anchor';
 // import { Entity, Scene } from 'aframe-react';
+import { Box, Chip, Typography } from '@mui/material';
 import { memo, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Handle, Position } from 'reactflow';
 import { GetEntity } from '../../data/GetEntity';
 import PreviewEntity from '../PreviewEntity';
@@ -23,9 +26,19 @@ export default memo(({ data, isConnectable }: { data: any, isConnectable: boolea
         onConnect={(params) => console.log('handle onConnect', params)}
         isConnectable={isConnectable}
       /> */}
-      <div style={{ width: '300px', height: '300px'}}>
-        Custom Color Picker Node: <strong>{data.id}</strong>
+      <Box display={'flex'} flexDirection={'column'} sx={{ gap: '8px'}}>
 
+        <AnchorIcon />
+
+        <Typography>Preview: <strong>{data.id}</strong></Typography>
+
+        <Box display={'flex'} sx={{ gap: '8px'}}>
+          <Chip variant='outlined' label={`Qty: 3`} />
+          <Link to={`/editor/${data.id}`}>
+            <Chip color="primary" variant='outlined' label={`Edit`} />
+          </Link>
+        </Box>
+      {/* </div>)} */}
         {entity && <PreviewEntity body={entity.body} style={{ height: '300px', width: '300px'}} />}
         {/* <a-scene embedded>
           <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
@@ -35,8 +48,8 @@ export default memo(({ data, isConnectable }: { data: any, isConnectable: boolea
           <a-sky color="#ECECEC"></a-sky>
           <a-entity camera orbit-controls="target: 0 1.6 -0.5; minDistance: 0.5; maxDistance: 180; initialPosition: 0 5 15"></a-entity>
         </a-scene> */}
-      </div>
-      <input className="nodrag" type="color" onChange={data.onChange} defaultValue={data.color} />
+      </Box>
+      {/* <input className="nodrag" type="color" onChange={data.onChange} defaultValue={data.color} /> */}
       {/* <Handle
         type="source"
         position={Position.Right}

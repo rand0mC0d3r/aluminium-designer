@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Box, TextField } from '@mui/material';
+import { Box, Checkbox, TextField, Typography } from '@mui/material';
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import 'reactflow/dist/style.css';
@@ -18,17 +18,40 @@ export default function Editor() {
     {needsUpdate && entity && <UpdateEntity entityId={id} payload={entity} onSuccess={() => setNeedsUpdate(false)} />}
 
     {entity && <Box display="flex" sx={{ flexDirection: 'row', alignItems: 'stretch', gap: '16px' }} flexGrow={1} p={2}>
-      <TextField
-        autoFocus
-        value={entity.body}
-        multiline={true}
-        rows={40}
-        fullWidth={true}
-        onChange={(e) => {
-          setEntity({...entity, body: e.target.value})
-          setNeedsUpdate(true)
-        }}
-      />
+
+      <Box display={'flex'} flexDirection={'column'} sx={{ gap: '8px', flex: '0 1 50%'}}>
+
+        <Box display={'flex'} alignItems={'center'}>
+          <Checkbox checked={entity.pure || false} onChange={(e) => {
+            setEntity({...entity, pure: e.target.checked})
+            setNeedsUpdate(true)
+          }} />
+          <Typography>Pure component</Typography>
+        </Box>
+
+        <TextField
+          placeholder='Title'
+          autoFocus
+          value={entity.title || ''}
+          fullWidth={true}
+          onChange={(e) => {
+            setEntity({...entity, title: e.target.value})
+            setNeedsUpdate(true)
+          }}
+        />
+
+        <TextField
+          autoFocus
+          value={entity.body}
+          multiline={true}
+          rows={40}
+          fullWidth={true}
+          onChange={(e) => {
+            setEntity({...entity, body: e.target.value})
+            setNeedsUpdate(true)
+          }}
+        />
+      </Box>
 
       <Box style={{ flex: '0 0 50%', height: '100%', overflow: 'hidden'}} sx={{ border: '1px solid', borderRadius: '8px'}}>
         <a-scene embedded>
